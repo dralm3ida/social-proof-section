@@ -1,0 +1,59 @@
+html {
+   font-size: 100%;
+   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+   box-sizing: inherit;
+}
+
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Spartan', sans-serif;
+   font-size: $font-size;
+   color: $darkGrayishMagenta;
+   font-weight: 400;
+   overflow-x: hidden;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      background-image: url('../../images/bg-pattern-top-mobile.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      min-height: 14.5625rem; // 233px
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      background-image: url('../../images/bg-pattern-bottom-mobile.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      min-height: 31.4375rem; // 503px
+   }
+}
+
+h1 {
+   font-weight: 700;
+   color: $veryDarkMagenta;
+   text-align: center;
+}
+
+h2 {
+   font-size: $font-size;
+   font-weight: 700;
+   color: $white;
+}
+
+p {
+   font-size: $font-size-sm;
+   text-align: center;
+   line-height: 1.5;
+}
