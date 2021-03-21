@@ -1,14 +1,47 @@
 .social {
-   margin: 1.5625rem; // 25px
+   padding: 1.5625rem; // 25px
+   min-height: 100vh;
+
+   @include break-up($laptop-md){
+      padding: 8.25rem 11.38% 8.25rem 11.38%;
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      grid-template-areas: 
+         'main ratings'
+         'proof proof';
+      grid-gap: 10px
+   }
 }
 
 .social-main {
    display: inline-block;
    margin-top: 2.375rem; // 38px
+
+   @include break-up($laptop-md){
+      grid-area: main;
+      margin-top: unset;
+
+      h1 {
+         font-size: $font-size-lg;
+         text-align: unset;
+      }
+
+      p {
+         margin-top: 1rem;
+         font-size: $font-size;
+         text-align: unset;
+      }
+   }
 }
 
 .social-ratings {
    margin-top: 2rem;
+
+   @include break-up($laptop-md){
+      margin-left: 4rem;
+      grid-area: ratings;
+      margin-top: unset;
+   }
    
    &-item {
       position: relative;
@@ -20,8 +53,27 @@
       color: $veryDarkMagenta;
       font-weight: 700;
 
+      @include break-up($laptop-md){
+         width: 29.75rem; // 476px
+         padding: 0.375rem; // 6px
+         text-align: unset;
+
+         &:nth-child(2){
+            margin-left: 3rem;
+         }
+
+         &:nth-child(3){
+            margin-left: calc(2*3rem);
+         }
+      }
+
       &-row {
          margin: 10px 0 10px 0;
+
+         @include break-up($laptop-md){
+            display: inline-block;
+            margin: 0.75rem 0 0.75rem 2rem;
+         }
       }
    }
 
@@ -30,11 +82,29 @@
 .social-proof {
    margin-top: 3.125rem; // 50px
 
+   @include break-up($laptop-md){
+      grid-area: proof;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.875rem;
+   }
+
    &-card {
       margin-top: 1rem;
       padding: 2.5rem 2rem 2.5rem 2rem;
       border-radius: 10px;
       background-color: $veryDarkMagenta;
+
+      @include break-up($laptop-md){
+         max-height: 14.75rem;
+
+         &:nth-child(2){
+            margin-top: 2rem;
+         }
+         &:nth-child(3){
+            margin-top: 3rem;
+         }
+      }
 
       &-buyer {
          position: relative;

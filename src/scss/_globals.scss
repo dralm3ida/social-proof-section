@@ -1,14 +1,15 @@
-html {
-   font-size: 100%;
+*, *::before, *::after {
+   margin: 0;
+   padding: 0;
    box-sizing: border-box;
 }
 
-*, *::before, *::after {
-   box-sizing: inherit;
+html {
+   font-size: 100%;
 }
 
-
 body {
+   min-height: 100vh;
    margin: 0;
    padding: 0;
    font-family: 'Spartan', sans-serif;
@@ -26,6 +27,13 @@ body {
       background-repeat: no-repeat;
       width: 100%;
       min-height: 14.5625rem; // 233px
+      overflow: hidden;
+
+      @include break-up($laptop-md){
+         width: 40%;
+         min-height: 17.5625rem;
+         background-image: url('../../images/bg-pattern-top-desktop.svg');
+      }
    }
 
    &::after {
@@ -37,6 +45,15 @@ body {
       background-repeat: no-repeat;
       width: 100%;
       min-height: 31.4375rem; // 503px
+      overflow: hidden;
+      z-index: -1;
+
+      @include break-up($laptop-md){
+         right: 0;
+         width: 75%;
+         height: 85%;
+         background-image: url('../../images/bg-pattern-bottom-desktop.svg');
+      }
    }
 }
 
@@ -53,6 +70,7 @@ h2 {
 }
 
 p {
+   margin-top: 1rem;
    font-size: $font-size-sm;
    text-align: center;
    line-height: 1.5;
